@@ -24,6 +24,7 @@ while True:
         deposito = float(input("Informe o valor do deposito: "))
         if deposito > 0:
             print("Deposito efetuado com sucesso")
+            extrato += f"Deposito: {deposito:.2f}\n"
             total_depositos = total_depositos + deposito
             saldo = total_depositos + saldo
         else:
@@ -43,13 +44,13 @@ while True:
             saldo -= saque
             numero_saques += 1  # Incrementar o número de saques
             print("Saque efetuado com sucesso")
+            extrato += f"Saque: {saque:.2f}\n"
 
     
     elif opcao == "e":
-        print("Extrato")
+        print("---Extrato---")
         print(f"Saldo: R${saldo:.2f}")
-        print(f"Total de depositos R${total_depositos:.2f}")
-        print(f"Numero de saques: {numero_saques}")
+        print(extrato)
 
     elif opcao == "q":
         break
